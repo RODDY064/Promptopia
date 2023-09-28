@@ -9,7 +9,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 export default function Nav() {
     const [toggleDrop, setToggleDrop] = useState(false);
     const { data: session } = useSession();
-    
+    // use the session
     
 
   return (
