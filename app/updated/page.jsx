@@ -8,7 +8,7 @@ import { useSearchParams } from "next/navigation";
 
 export default function EditPrompt() {
     const  searchParams = useSearchParams();
-    const promptId = searchParams.get('id')
+    const promptId = searchParams.get('id');
 
  
   const router = useRouter();

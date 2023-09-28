@@ -7,8 +7,8 @@ import { useSearchParams } from "next/navigation";
 
 export default function EditPrompt() {
     const  searchParams = useSearchParams();
-    const promptId = searchParams.get('id')
-    const promptName = searchParams.get('author')
+    const promptId = searchParams.get('id');
+    const promptName = searchParams.get('author');
 
     const [posts , setPosts] = useState([])
    
