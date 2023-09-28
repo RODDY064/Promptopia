@@ -9,7 +9,7 @@ export const GET = async (req, { params }) => {
           authorId: id, // Use the extracted 'id' parameter
         },
         include:{
-            author:true,
+            author:true,// include the author
         }
       });
       return NextResponse.json(posts, { status: 200 });
