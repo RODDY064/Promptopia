@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
 import Image from 'next/image'
-import {signIn , signOut ,useSession ,getProviders } from 'next-auth/react'
+import {signIn , signOut ,useSession } from 'next-auth/react'
 import { AnimatePresence, motion } from 'framer-motion';
 
 export default function Nav() {

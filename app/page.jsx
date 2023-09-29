@@ -2,8 +2,6 @@
 
 import React from 'react'
 import Feed from '@components/Feed'
-import { getServerSession } from 'next-auth'
-import { redirect } from 'next/navigation'
 import { motion } from 'framer-motion'
 
 export default function Home() {
