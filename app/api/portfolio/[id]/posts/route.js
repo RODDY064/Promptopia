@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-
+import prisma from "@libs/prisma";
 export const GET = async (req, { params }) => {
     try {
       const { id } = params; // Extract the 'id' parameter
