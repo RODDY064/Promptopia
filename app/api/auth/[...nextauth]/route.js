@@ -10,7 +10,6 @@ import { PrismaClient } from '@prisma/client';
 const prisma = new PrismaClient
 
 
-
 const handler = NextAuth({
     adapter: PrismaAdapter(prisma),
     providers:[
