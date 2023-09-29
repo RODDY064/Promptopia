@@ -1,5 +1,5 @@
 'use client'
-import PromptCard from "@components/promptCard"
+import PromptCard from "@components/promptCard";
 
 export default function Profiles({posts ,name , desc, handleEdit ,handleDelete }) {
   return (
