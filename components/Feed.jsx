@@ -1,4 +1,4 @@
-'use client'
+"use client"
 
 import { useEffect, useState } from "react"
 import PromptCard from "./promptCard";
@@ -44,14 +44,19 @@ export default function Feed() {
     setIsSearching(searchTerm.trim() !== ''); // Set isSearching based on whether search is empty or not
   };
 
+  const fetchPosts = async () => {
+    const response = await fetch('/api/prompt');
+    const data = await response.json();
+    setPosts(data);
+  };
+
   useEffect(() => {
-    const fetchPosts = async () => {
-      const response = await fetch('/api/prompt');
-      const data = await response.json();
-      setPosts(data);
-    };
-    fetchPosts();
+    if (typeof window !== 'undefined') {
+      // Check if window is defined (to ensure we're in the browser environment)
+      fetchPosts(); // Fetch data when the component mounts or page reloads
+    }
   }, []);
+
 
   useEffect(() => {
     if (searchText.trim() === '') {
