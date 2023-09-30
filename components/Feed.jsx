@@ -24,6 +24,29 @@ export const PromptCardList = ({ data ,handleProfile}) =>{
   )
 }
 export default function Feed() {
+  
+  
+  const fetchPosts = async() =>{
+    try {
+      const response = await fetch('/api/prompt');
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      const data = await response.json();
+      setPosts(data);
+      console.log('Post fetch')
+    } catch (error) {
+      console.error(error);
+    }
+   };
+
+   
+  useEffect(() => {
+    fetchPosts() 
+  },[]);
+
+
+
   const [searchText, setSearchText] = useState('');
   const [posts, setPosts] = useState([]);
   const [searchPost , setSearchPost] = useState([])
@@ -31,6 +54,7 @@ export default function Feed() {
   
 
   const filterPosts = (searchTerm) => {
+
     return posts.filter((post) =>
       post.prompt.toLowerCase().includes(searchTerm.toLowerCase()) ||
       post.tag.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -44,26 +68,7 @@ export default function Feed() {
     setIsSearching(searchTerm.trim() !== ''); // Set isSearching based on whether search is empty or not
   };
 
-  const fetchPosts = async () => {
-    try {
-      const response = await fetch('/api/prompt');
-      if (!response.ok) {
-        throw new Error('Network response was not ok');
-      }
-      const data = await response.json();
-      setPosts(data);
-    } catch (error) {
-      console.error(error);
-    }
-  };
   
-
-  
-  useEffect(() => {
-    fetchPosts() 
-  },[]);
-
-
 
   useEffect(() => {
     if (searchText.trim() === '') {
