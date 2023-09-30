@@ -24,6 +24,7 @@ export default function Register() {
     }).then((callback)=>{
       if(callback?.ok){
         toast.success('Account registered successfully')
+        router.push('/auth/signIn')
       }
 
       if(callback?.error){
@@ -31,9 +32,7 @@ export default function Register() {
       }
     })
  
-    if(response.ok){
-      router.push('/auth/signIn')
-    }
+
     
    
   }

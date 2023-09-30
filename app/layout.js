@@ -5,10 +5,13 @@ import '@styles/globals.css';
 import ToasterContext from '@components/ToasterContext';
 
 
+
 export const metadata = {
   title: 'Promptopai',
   description: 'Discover & Share AI prompts',
-}
+
+ 
+};
 
 export default function RootLayout({ children }) {
  return (

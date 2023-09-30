@@ -23,7 +23,7 @@ export default function PromptCard({post ,  handleDelete ,handleEdit,handleProfi
        <div className="flex justify-between items-start gap-5 ">
         <div className="flex-1 flex justify-center item-center gap-3 cursor-pointer">
         <Image
-         src={post.author.image}
+         src={post.author.image|| '/assets/images/profile.svg'}
          width={44}
          height={37}
          alt="author"
