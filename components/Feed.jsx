@@ -50,10 +50,15 @@ export default function Feed() {
     setPosts(data);
   };
 
+  
   useEffect(() => {
     fetchPosts() 
-     console.log(posts)
   }, []);
+
+  useEffect(() => {
+    fetchPosts() 
+    console.log(posts)
+  }, [posts]);
 
 
   useEffect(() => {
