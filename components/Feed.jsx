@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { useEffect, useState } from "react"
 import PromptCard from "./promptCard";
@@ -52,7 +52,7 @@ export default function Feed() {
 
   useEffect(() => {
     fetchPosts() 
-    console.log(1)
+     console.log(posts)
   }, []);
 
 
