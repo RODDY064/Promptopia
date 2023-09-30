@@ -2,6 +2,7 @@ import { PrismaClient } from "@prisma/client";
 import { NextResponse } from "next/server";
 
 const prisma = new PrismaClient();
+// new prisma client
 export const GET = async (req) =>{
     try {
       const posts = await prisma.post.findMany({
