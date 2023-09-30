@@ -55,11 +55,6 @@ export default function Feed() {
     fetchPosts() 
   }, []);
 
-  useEffect(() => {
-    fetchPosts() 
-    console.log(posts)
-  }, [posts]);
-
 
   useEffect(() => {
     if (searchText.trim() === '') {
