@@ -61,7 +61,7 @@ export default function Feed() {
   
   useEffect(() => {
     fetchPosts() 
-  }, []);
+  },[]);
 
 
 
