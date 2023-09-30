@@ -8,12 +8,10 @@ export const GET = async (req) =>{
           author: true // Include the author relation
         }
       });
-      if(posts){
-
-      }
-      return new  NextResponse.json(posts)
+   
+      return NextResponse.json(posts)
     } catch (error) {
       console.error(error);
-      return NextResponse.json({ error: "Internal server error" }, { status: 500 });
+      return NextResponse.json({ error:"Internal server error" },{ status: 500 });
     }
 }
