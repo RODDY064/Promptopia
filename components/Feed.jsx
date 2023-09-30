@@ -51,10 +51,7 @@ export default function Feed() {
   };
 
   useEffect(() => {
-    if (typeof window !== 'undefined') {
-      // Check if window is defined (to ensure we're in the browser environment)
-      fetchPosts(); // Fetch data when the component mounts or page reloads
-    }
+    fetchPosts() 
   }, []);
 
 
