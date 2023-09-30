@@ -52,6 +52,7 @@ export default function Feed() {
 
   useEffect(() => {
     fetchPosts() 
+    console.log(1)
   }, []);
 
 
