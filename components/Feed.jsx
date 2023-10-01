@@ -30,7 +30,7 @@ export default function Feed() {
   const [posts, setPosts] = useState([]);
   const [searchPost , setSearchPost] = useState([])
   const [isSearching, setIsSearching] = useState(false);
-  const pathName = usePathname();
+ 
   
    
     
