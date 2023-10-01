@@ -26,7 +26,7 @@ export const PromptCardList = ({ data ,handleProfile}) =>{
 export default function Feed() {
   
   
-  const fetchPosts = async() =>{
+  const UpdatePost = async() =>{
     try {
       const response = await fetch('/api/prompt');
       if (!response.ok) {
@@ -34,19 +34,17 @@ export default function Feed() {
       }
       const data = await response.json();
       setPosts(data);
-      console.log('Post fetch')
-    } catch (error) {
+       console.log(data)
+    }catch (error) {
       console.error(error);
     }
    };
 
    
   useEffect(() => {
-    fetchPosts() 
-  },[]);
- useEffect(()=>{
-  console.log(posts)
- })
+    UpdatePost();
+  },[posts]);
+ 
 
 
   const [searchText, setSearchText] = useState('');
