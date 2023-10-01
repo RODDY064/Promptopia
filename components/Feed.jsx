@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react"
 import PromptCard from "./promptCard";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 export const PromptCardList = ({ data ,handleProfile}) =>{
   
@@ -24,34 +24,35 @@ export const PromptCardList = ({ data ,handleProfile}) =>{
   )
 }
 export default function Feed() {
+
+  const [searchText, setSearchText] = useState('');
+  const [posts, setPosts] = useState([]);
+  const [searchPost , setSearchPost] = useState([])
+  const [isSearching, setIsSearching] = useState(false);
+  const pathName = usePathname();
   
-  
+   
+    
   const UpdatePost = async() =>{
     try {
-      const response = await fetch('/api/prompt');
+      if(pathName === '/'){
+        const response = await fetch('/api/prompt');
       if (!response.ok) {
         throw new Error('Network response was not ok');
       }
       const data = await response.json();
       setPosts(data);
        console.log(data)
+      }
     }catch (error) {
       console.error(error);
     }
    };
 
-   
-  useEffect(() => {
+   useEffect(() => {
     UpdatePost();
-  },[]);
+   },[]);
  
-
-
-  const [searchText, setSearchText] = useState('');
-  const [posts, setPosts] = useState([]);
-  const [searchPost , setSearchPost] = useState([])
-  const [isSearching, setIsSearching] = useState(false);
-  
 
   const filterPosts = (searchTerm) => {
 
