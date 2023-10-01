@@ -44,7 +44,9 @@ export default function Feed() {
   useEffect(() => {
     fetchPosts() 
   },[]);
-
+ useEffect(()=>{
+  console.log(posts)
+ })
 
 
   const [searchText, setSearchText] = useState('');

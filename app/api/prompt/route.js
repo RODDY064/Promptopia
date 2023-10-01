@@ -10,7 +10,8 @@ export const GET = async (req) =>{
           author: true // Include the author relation
         }
       });
-   
+     
+      console.log(posts)
       return NextResponse.json(posts)
     } catch (error) {
       console.error(error);
