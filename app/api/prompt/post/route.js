@@ -2,7 +2,7 @@ import prisma from "@libs/prisma";
 import { NextResponse } from "next/server";
 
 // new prisma client
-export const GET = async (req) =>{
+export const GET=async (req) =>{
     try {
       const posts = await prisma.post.findMany({
         include: {
@@ -13,7 +13,7 @@ export const GET = async (req) =>{
         return NextResponse.json({ error: 'Post not found' }, { status: 404 });
       }
     
-      return NextResponse.json(posts);
+      return NextResponse.json(posts,{ status: 200 });
     } catch (error) {
       console.error(error);
       return NextResponse.json({ error:"Internal server error" },{ status: 500 });

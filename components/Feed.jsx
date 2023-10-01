@@ -35,16 +35,13 @@ export default function Feed() {
     
   const UpdatePost = async() =>{
     try {
-      if(pathName === '/'){
-        const response = await fetch('/api/prompt');
+      const response = await fetch('/api/prompt/post');
       if (!response.ok) {
         throw new Error('Network response was not ok');
       }
       const data = await response.json();
       setPosts(data);
-       console.log(data)
-      }
-    }catch (error) {
+     }catch (error) {
       console.error(error);
     }
    };
