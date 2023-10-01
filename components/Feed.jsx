@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react"
 import PromptCard from "./promptCard";
 import { usePathname, useRouter } from "next/navigation";
+import cache from 'react'
 
 export const PromptCardList = ({ data ,handleProfile}) =>{
   
@@ -35,7 +36,16 @@ export default function Feed() {
     
   const UpdatePost = async() =>{
     try {
-      const response = await fetch('/api/prompt/post');
+
+   
+      await cache.invalidate('/api/prompt/post');
+
+      const response = await fetch('/api/prompt/post', {
+        headers: {
+          'Cache-Control': 'no-cache, no-store, must-revalidate',
+        },
+      });
+      
       if (!response.ok) {
         throw new Error('Network response was not ok');
       }

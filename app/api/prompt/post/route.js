@@ -20,5 +20,9 @@ export const GET = cache(async (req, res) => {
         console.error(error);
         return NextResponse.json({ error: "Internal server error" }, { status: 500 });
     }
-}
+},
+{
+    // Set a cache expiry time in milliseconds (e.g., 5 minutes)
+    ttl: 300000, // 5 minutes
+  }
 )
