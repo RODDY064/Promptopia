@@ -1,7 +1,6 @@
 import { NextResponse } from "next/server";
-import { PrismaClient } from "@prisma/client";
+import prisma from "@libs/prisma";
 
-const prisma = new PrismaClient()
 // new prisma client
 export const GET = async (req) =>{
     try {
@@ -10,8 +9,10 @@ export const GET = async (req) =>{
           author: true // Include the author relation
         }
       });
-     
-      console.log(posts)
+      if (!posts) {
+        return NextResponse.json({ error: 'Post not found' }, { status: 404 });
+      }
+    
       return NextResponse.json(posts)
     } catch (error) {
       console.error(error);
