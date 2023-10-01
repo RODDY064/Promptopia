@@ -38,7 +38,7 @@ export default function Feed() {
     try {
 
    
-      await cache.invalidate('/api/prompt/post');
+     
 
       const response = await fetch('/api/prompt/post', {
         headers: {
