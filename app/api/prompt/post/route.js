@@ -12,7 +12,9 @@ export const GET=async (req) =>{
       if (!posts) {
         return NextResponse.json({ error: 'Post not found' }, { status: 404 });
       }
-    
+      response.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
+      response.setHeader('Last-Modified', new Date().toUTCString());
+ 
       return NextResponse.json(posts,{ status: 200 });
     } catch (error) {
       console.error(error);
