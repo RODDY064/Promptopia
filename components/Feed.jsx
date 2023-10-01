@@ -41,7 +41,6 @@ export default function Feed() {
       }
       const data = await response.json();
       setPosts(data);
-      console.log(data)
      }catch (error) {
       console.error(error);
     }
