@@ -13,7 +13,7 @@ export const GET = async (req) =>{
         return NextResponse.json({ error: 'Post not found' }, { status: 404 });
       }
     
-      return NextResponse.json(posts)
+      return NextResponse.json(posts);
     } catch (error) {
       console.error(error);
       return NextResponse.json({ error:"Internal server error" },{ status: 500 });

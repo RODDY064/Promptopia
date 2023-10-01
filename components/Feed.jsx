@@ -43,7 +43,7 @@ export default function Feed() {
    
   useEffect(() => {
     UpdatePost();
-  },[posts]);
+  },[]);
  
 
 
