@@ -4,6 +4,9 @@ import React from 'react'
 import Feed from '@components/Feed'
 import { motion } from 'framer-motion'
 
+// Add
+export const dynamic = 'force-dynamic'
+
 export default function Home() {
   const popUp = {
     hidden:{x:-1, opacity: 0, scale: 0.5 },
