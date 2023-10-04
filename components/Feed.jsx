@@ -40,11 +40,7 @@ export default function Feed() {
    
      
 
-      const response = await fetch('/api/prompt/post', {
-        headers: {
-          'Cache-Control': 'no-cache, no-store, must-revalidate',
-        },
-      });
+      const response = await fetch('/api/prompt/post',{cache: 'no-store'});
       
       if (!response.ok) {
         throw new Error('Network response was not ok');

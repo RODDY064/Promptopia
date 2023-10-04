@@ -1,8 +1,8 @@
 import prisma from "@libs/prisma";
 import { NextResponse } from "next/server";
-import { cache } from 'react'
 
-export const GET = cache(async (req, res) => {
+
+export const GET = async (req, res) => {
     try {
         const posts = await prisma.post.findMany({
             include: {
@@ -13,16 +13,9 @@ export const GET = cache(async (req, res) => {
             return NextResponse.json({ error: 'Post not found' }, { status: 404 });
         }
 
-        
-
         return NextResponse.json(posts, { status: 200 });
     } catch (error) {
         console.error(error);
         return NextResponse.json({ error: "Internal server error" }, { status: 500 });
     }
-},
-{
-    // Set a cache expiry time in milliseconds (e.g., 5 minutes)
-    ttl: 300000, // 5 minutes
-  }
-)
+}
