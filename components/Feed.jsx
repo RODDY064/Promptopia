@@ -4,7 +4,6 @@ import { useEffect, useState } from "react"
 import PromptCard from "./promptCard";
 import { useRouter } from "next/navigation";
 
-export const dynamic = 'force-dynamic'
 
 export const PromptCardList = ({ data ,handleProfile}) =>{
   
@@ -41,7 +40,11 @@ export default function Feed() {
    
      
 
-      const response = await fetch('/api/prompt/post');
+      const response = await fetch('/api/prompt/post',{
+        next:{
+          revalidate: 60
+        }
+      });
       
       if (!response.ok) {
         throw new Error('Network response was not ok');
