@@ -37,10 +37,9 @@ export default function Feed() {
   const UpdatePost = async() =>{
     try {
 
-   
-     
 
       const response = await fetch('/api/prompt/post',{
+        method:'GET',
         next:{
           revalidate: 60
         }
