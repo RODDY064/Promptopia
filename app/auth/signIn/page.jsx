@@ -74,7 +74,7 @@ export default function SignIn () {
                     <label htmlFor="email" className=" text-gray-500 text-sm font-medium">Username</label>
                     <input type="email" id="email" name="email"  
                     autoComplete="email"
-                    value={data.email}  onChange={(e)=>setData({...data,email:e.target.value})} required  placeholder="Enter your email" className="w-full input_field" 
+                    value={data.email}  onChange={(e)=>setData({...data,email:e.target.value})} required  placeholder="Enter your username" className="w-full input_field" 
                     />
                   </div>
                   <div className="space-y-1">

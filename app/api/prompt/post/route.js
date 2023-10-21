@@ -1,6 +1,6 @@
 import prisma from "@libs/prisma";
 import { NextResponse } from "next/server";
-import { cache } from 'react'
+
 
 export const revalidate = 0 
 
