@@ -40,9 +40,7 @@ export default function Feed() {
 
       const response = await fetch('/api/prompt/post',{
         method:'GET',
-        next:{
-          revalidate: 60
-        }
+       
       });
       
       if (!response.ok) {
